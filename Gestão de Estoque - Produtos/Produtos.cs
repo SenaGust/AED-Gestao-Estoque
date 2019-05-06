@@ -57,11 +57,6 @@ namespace Gestão_de_Estoque___Produtos
 
             return false;
         }
-        public override string ToString()
-        {
-            //feito nas classes filhas
-            return null;
-        }
         #endregion
     }
 }

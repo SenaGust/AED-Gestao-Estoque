@@ -48,6 +48,7 @@
     <Compile Include="Bebidas.cs" />
     <Compile Include="Comidas.cs" />
     <Compile Include="Elemento.cs" />
+    <Compile Include="Estoque.cs" />
     <Compile Include="Fila.cs" />
     <Compile Include="IDado.cs" />
     <Compile Include="IEstruturaDados.cs" />

@@ -6,29 +6,22 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Estoque___Produtos
 {
-    class Pedido
+    class Pedido:IDado
     {
         #region Atributos
         public int Id { get; set; }
-        public Fila Itens { get; private set; }
+        public int QuantidadeProdutos { get; set; }
         #endregion
 
         #region Construtor
         public Pedido(int Id)
         {
-            this.Id = Id;
-            this.Itens = new Fila();
+            
         }
         #endregion
 
         #region Métodos
-        public void InserirProduto(Produtos produto)
-        {
-            //Transformo o produto em um item de pedido
-
-
-            Itens.Inserir(produto);
-        }
+        
         #endregion
 
         #region Métodos Interface

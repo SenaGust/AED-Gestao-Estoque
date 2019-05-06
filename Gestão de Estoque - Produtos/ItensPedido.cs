@@ -9,14 +9,15 @@ namespace Gestão_de_Estoque___Produtos
     class ItensPedido : IDado
     {
         #region Atributos
+        public int ID { get; set; }
         public Produtos Produto { get; set; }
         public int Quantidade { get; set; }
-        public double ValorTotal { get; set; }
         #endregion
 
         #region Construtor
-        public ItensPedido(Produtos Produto, int Quantidade)
+        public ItensPedido(int ID, Produtos Produto, int Quantidade)
         {
+            this.ID = ID;
             this.Produto = Produto;
             this.Quantidade = Quantidade;
         }
