@@ -21,9 +21,9 @@ namespace Gestão_de_Estoque___Produtos
         #endregion
 
         #region Construtor
-        public Produtos(int ID, string NomeProduto, double Margem_Lucro,double Preco_custo, double Estoque_Inicial, double Estoque_minimo)
+        public Produtos(int ID_Produto, string NomeProduto, double Margem_Lucro,double Preco_custo, double Estoque_Inicial, double Estoque_minimo)
         {
-            this.ID_Produto = ID;
+            this.ID_Produto = ID_Produto;
             this.NomeProduto = NomeProduto;
             this.MargemLucro = Margem_Lucro;
             this.PrecoCusto = Preco_custo;
