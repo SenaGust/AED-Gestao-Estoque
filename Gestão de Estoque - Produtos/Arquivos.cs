@@ -9,6 +9,7 @@ namespace Gestão_de_Estoque___Produtos
 {
     class Arquivos
     {
+        #region Leitura_arq_produtos
         public Fila LeituraArquivoProdutos(string arq1)
         {
             Fila Produtos = new Fila();
@@ -40,24 +41,24 @@ namespace Gestão_de_Estoque___Produtos
                             dado = new Bebidas(vetor_aux_arq1[0], vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
                             break;
                         case 2:
+                            dado = new Comidas(vetor_aux_arq1[0], vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
                             break;
                         case 3:
+                            dado = new MaterialEscritorio(vetor_aux_arq1[0], vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
                             break;
                         case 4:
+                            dado = new UtensiliosDomesticos(vetor_aux_arq1[0], vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
+                            break;
+                        default:
                             break;
                     }
+                    Produtos.Inserir(dado);
                 }
             }
-
-            //Arquivo
-            //Bebidas = 1
-            //Comidas = 2
-            //Material de escritorio = 3
-
-            //Utensilhos = 4
-
+            //Arquivo //Bebidas = 1 //Comidas = 2 //Material de escritorio = 3 //Utensilhos = 4
             return Produtos;
         }
+        #endregion
 
         public void LeituraArquivoPedidos()
         {
