@@ -10,7 +10,7 @@ namespace Gestão_de_Estoque___Produtos
     {
         //cód_produto; nome; categoria; margem de lucro; preço de custo; estoque inicial; minimo estoque
         #region Construtor
-        public Bebidas(string id, string nome, double margem_lucro, double preco, double estoque_inicial,double min_estoque) : base(id, nome, preco, mLucroMin, mLucroMax)
+        public Bebidas(string id, string nome, double margem_lucro, double preco, double estoque_inicial,double min_estoque) : base(id, nome, margem_lucro,preco,estoque_inicial,min_estoque)
         {
             Imposto = 0.45;
         }
@@ -20,7 +20,7 @@ namespace Gestão_de_Estoque___Produtos
         public override string ToString()
         {
             return String.Format("Id: {0}; Categoria: Bebidas; Nome do produto: {1}; Custo: {2}; Margem de lucro: {3}",
-                ID, NomeProduto, PrecoCusto, MargemLucroMIN);
+                ID, NomeProduto, PrecoCusto, MargemLucro);
         }
         #endregion
     }

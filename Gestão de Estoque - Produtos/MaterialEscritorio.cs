@@ -9,7 +9,7 @@ namespace Gestão_de_Estoque___Produtos
     class MaterialEscritorio : Produtos
     {
         #region Construtor
-        public MaterialEscritorio(string id, string nome, double preco, double mLucroMin, double mLucroMax) : base(id, nome, preco, mLucroMin, mLucroMax)
+        public MaterialEscritorio(string id, string nome, double margem_lucro, double preco, double estoque_inicial, double min_estoque) : base(id, nome, margem_lucro, preco, estoque_inicial, min_estoque)
         {
             Imposto = 0.4;
         }
@@ -19,7 +19,7 @@ namespace Gestão_de_Estoque___Produtos
         public override string ToString()
         {
             return String.Format("Id: {0}; Categoria: Bebidas; Nome do produto: {1}; Custo: {2}; Margem de lucro: {3}",
-                ID, NomeProduto, PrecoCusto, MargemLucroMIN);
+                ID, NomeProduto, PrecoCusto, MargemLucro);
         }
         #endregion
     }
