@@ -70,20 +70,16 @@ namespace Gestão_de_Estoque___Produtos
 
                 switch (grau)
                 {
-                    case 0:
+                    case 0: //não possui filhos
                         return null;
-                        break;
                     case -1: //filho a esquerda
                         return onde.Esquerda;
-                        break;
                     case 1: //filho a direita
                         return onde.Direita;
-                        break;
                     case 2: //tem dois filhos
                         Nodo antecessor = onde.Antecessor();
                         onde.MeuDado = antecessor.MeuDado;
                         onde.Esquerda = RetiradaRec(antecessor, onde.Esquerda, out saida);
-
                         break;
                 }
             }
@@ -95,17 +91,17 @@ namespace Gestão_de_Estoque___Produtos
             if (raiz == null) //quando encontra uma raiz nula, vc insere novo
                 return novo;
 
-            if (novo.MeuDado.CompareTo(raiz.MeuDado) < 0)
+            if (novo.MeuDado.CompareTo(raiz.MeuDado) < 0) //procura uma raiz nula na esquerda
                 raiz.Esquerda = InserirRecursivo(novo, raiz.Esquerda);
             else
-                raiz.Direita = InserirRecursivo(novo, raiz.Direita);
+                raiz.Direita = InserirRecursivo(novo, raiz.Direita); //procura uma raiz nula na direita
 
             return raiz;
         }
 
         private Nodo BuscaRecursiva(Nodo busca, Nodo raiz)
         {
-            if (raiz == null)
+            if (raiz == null) 
                 return null;
 
             if (busca.MeuDado.CompareTo(raiz) == 0)
@@ -136,7 +132,7 @@ namespace Gestão_de_Estoque___Produtos
         {
             //Usado para saber quem é filho de quem 
             //Escreve quem é o pai primeiro (inclusive nas sub raízes)
-            //É possível recriar a arvoré igualmente, apenas com essa string criada. Graças a isso, serve como backup se usar como fila
+            //É possível recriar a árvore igualmente, apenas com essa string criada. Graças a isso, serve como backup se usar como fila
 
             if (raiz != null)
             {
@@ -155,7 +151,7 @@ namespace Gestão_de_Estoque___Produtos
         {
             //Usado para saber quem é filho de quem 
             //Escreve quem é o pai primeiro (inclusive nas sub raízes)
-            //É possível recriar a arvoré igualmente, apenas com essa string criada. Graças a isso, serve como backup se usar como pilha
+            //É possível recriar a árvore igualmente, apenas com essa string criada. Graças a isso, serve como backup se usar como pilha
 
             if (raiz != null)
             {

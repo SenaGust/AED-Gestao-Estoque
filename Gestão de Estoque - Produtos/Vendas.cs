@@ -42,7 +42,7 @@ namespace Gestão_de_Estoque___Produtos
         }
         public override string ToString()
         {
-            return ("ID Produto: " + Produto.ID + "; Nome: " + Produto.NomeProduto + "; Quantidade: " + Quantidade + "; Preço: " + ValorTotal + ".");
+            return ("ID Produto: " + Produto.ID + "; Nome: " + Produto.NomeProduto + "; Quantidade: " + Quantidade +".");
         }
         #endregion
     }

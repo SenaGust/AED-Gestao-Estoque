@@ -27,7 +27,14 @@ namespace Gestão_de_Estoque___Produtos
             this.MargemLucroMIN = MargemLucroMIN;
             this.MargemLucroMAX = MargemLucroMAX;
         }
+
+        public Produtos()
+        {
+
+        }
         #endregion
+
+
 
         #region Métodos
         public double CalcImposto()
@@ -42,19 +49,17 @@ namespace Gestão_de_Estoque___Produtos
         #endregion
 
         #region Métodos Interface
+
         public int CompareTo(object obj)
         {
             Pedido item = (Pedido)(obj);
 
-            //Quando é menor, maior e igual
 
             return 0;
         }
         public override bool Equals(object obj)
         {
             Pedido item = (Pedido)(obj);
-            
-            //Quando é igual?
 
             return false;
         }
