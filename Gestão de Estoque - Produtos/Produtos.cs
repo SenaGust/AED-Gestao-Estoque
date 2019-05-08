@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Estoque___Produtos
 {
-    abstract class Produtos : IDado
+    class Produtos : IDado
     {
         #region Atributos
         public string ID { get; private set; }
@@ -15,6 +15,7 @@ namespace Gestão_de_Estoque___Produtos
         public double MargemLucroMIN { get; set; }
         public double MargemLucroMAX { get; set; }
         public double Imposto { get; set; }
+        public Fila Vendas { get; set; }
         #endregion
 
         #region Construtor

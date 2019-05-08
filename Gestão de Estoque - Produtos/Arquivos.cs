@@ -8,9 +8,9 @@ namespace Gestão_de_Estoque___Produtos
 {
     class Arquivos
     {
-        public Estoque EstoqueInicial()
+        public Fila LeituraArquivoProdutos()
         {
-            Estoque estoque = new Estoque();
+            Fila Produtos = new Fila();
 
             //Arquivo
             //cód_produto; nome; categoria; margem de lucro; preço de custo; estoque inicial; minimo estoque
@@ -20,27 +20,23 @@ namespace Gestão_de_Estoque___Produtos
 
             //Utensilhos = 4
 
-            return estoque;
+            return Produtos;
         }
 
-        public Fila Pedidos()
+        public void LeituraArquivoPedidos()
         {
-            Fila pedidos = new Fila(); //Seria uma fila de Pedido
 
             //Arquivo
             //Cod_pedido; Qtde_produtos
 
-            return pedidos;
         }
 
-        public Fila Vendas()
+        public void LeituraArquivoVendas()
         {
-            Fila vendas = new Fila(); //seria uma fila de itensPedido
 
             //Arquivo
             //Cod_pedido; Cod_Produto; Qtd_Vendida
 
-            return vendas;
         }
     }
 }

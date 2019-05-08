@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Estoque___Produtos
 {
-    class ItensPedido : IDado
+    class Vendas : IDado
     {
         #region Atributos
         public int ID { get; set; }
@@ -15,7 +15,7 @@ namespace Gestão_de_Estoque___Produtos
         #endregion
 
         #region Construtor
-        public ItensPedido(int ID, Produtos Produto, int Quantidade)
+        public Vendas(int ID, Produtos Produto, int Quantidade)
         {
             this.ID = ID;
             this.Produto = Produto;
@@ -26,7 +26,7 @@ namespace Gestão_de_Estoque___Produtos
         #region Métodos Interface
         public int CompareTo(object obj)
         {
-            ItensPedido item = (ItensPedido)(obj);
+            Vendas item = (Vendas)(obj);
 
             //Quando é menor, maior e igual
 
@@ -34,7 +34,7 @@ namespace Gestão_de_Estoque___Produtos
         }
         public override bool Equals(object obj)
         {
-            ItensPedido item = (ItensPedido)(obj);
+            Vendas item = (Vendas)(obj);
 
             //Quando é igual?
 

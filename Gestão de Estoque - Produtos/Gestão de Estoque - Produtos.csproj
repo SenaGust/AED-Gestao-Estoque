@@ -48,11 +48,10 @@
     <Compile Include="Bebidas.cs" />
     <Compile Include="Comidas.cs" />
     <Compile Include="Elemento.cs" />
-    <Compile Include="Estoque.cs" />
     <Compile Include="Fila.cs" />
     <Compile Include="IDado.cs" />
     <Compile Include="IEstruturaDados.cs" />
-    <Compile Include="ItensPedido.cs" />
+    <Compile Include="Vendas.cs" />
     <Compile Include="MaterialEscritorio.cs" />
     <Compile Include="Nodo.cs" />
     <Compile Include="Pedido.cs" />

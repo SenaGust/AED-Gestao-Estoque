@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Estoque___Produtos
 {
-    class Pedido:IDado
+    class Pedido:IDado   //não vai ter relação nenhuma com a árvore 
     {
         #region Atributos
         public int Id { get; set; }
