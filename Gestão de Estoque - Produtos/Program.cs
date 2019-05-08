@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gestão_de_Estoque___Produtos
+namespace Gestão_de_Estoque___Produtos   //teste
 {
     class Program
     {
