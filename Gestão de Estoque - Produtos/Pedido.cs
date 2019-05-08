@@ -6,47 +6,49 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Estoque___Produtos
 {
-    class Pedido:IDado   //não vai ter relação nenhuma com a árvore 
+    class Pedido : IDado   //não vai ter relação nenhuma com a árvore 
     {
         #region Atributos
-        public int Id { get; set; }
+        public int ID_Pedido { get; set; }
         public int QuantidadeProdutos { get; set; }
         #endregion
 
         #region Construtor
-        public Pedido(int Id)
+        public Pedido(int ID_Pedido, int QuantidadeProdutos)
         {
-            
+            this.ID_Pedido = ID_Pedido;
+            this.QuantidadeProdutos = QuantidadeProdutos;
         }
         #endregion
 
         #region Métodos
-        
+
         #endregion
 
         #region Métodos Interface
-        public int CompareTo(object obj)
+        public int CompareTo(object obj) // Compara os pedidos usando o Id
         {
-            Pedido item = (Pedido)(obj);
+            Pedido aux = (Pedido)(obj);        
 
-            //Quando é menor, maior e igual
-
-            return 0;
+            if (ID_Pedido < aux.ID_Pedido)
+                return -1;
+            else if (ID_Pedido > aux.ID_Pedido)
+                return 1;
+            else
+                return 0;            
         }
         public override bool Equals(object obj)
         {
-            Pedido item = (Pedido)(obj);
+            Pedido aux = (Pedido)(obj);
 
-            //Quando é igual?
-
-            return false;
+            return ID_Pedido == aux.ID_Pedido;            
         }
         public override string ToString()
         {
             StringBuilder auxString = new StringBuilder();
 
-            auxString.AppendLine("Pedido nº" + Id);
-            auxString.AppendLine(Itens.ToString());
+            auxString.AppendLine("Pedido nº" + ID_Pedido);
+            auxString.AppendLine("Quantidade de itens no pedido: " + QuantidadeProdutos);
 
             return auxString.ToString();
         }
