@@ -9,14 +9,14 @@ namespace Gestão_de_Estoque___Produtos
     class Pedido : IDado   //não vai ter relação nenhuma com a árvore 
     {
         #region Atributos
-        public int Id { get; set; }
+        public int ID_Pedido { get; set; }
         public int QuantidadeProdutos { get; set; }
         #endregion
 
         #region Construtor
-        public Pedido(int Id, int QuantidadeProdutos)
+        public Pedido(int ID_Pedido, int QuantidadeProdutos)
         {
-            this.Id = Id;
+            this.ID_Pedido = ID_Pedido;
             this.QuantidadeProdutos = QuantidadeProdutos;
         }
         #endregion
@@ -30,9 +30,9 @@ namespace Gestão_de_Estoque___Produtos
         {
             Pedido aux = (Pedido)(obj);        
 
-            if (Id < aux.Id)
+            if (ID_Pedido < aux.ID_Pedido)
                 return -1;
-            else if (Id > aux.Id)
+            else if (ID_Pedido > aux.ID_Pedido)
                 return 1;
             else
                 return 0;            
@@ -41,13 +41,13 @@ namespace Gestão_de_Estoque___Produtos
         {
             Pedido aux = (Pedido)(obj);
 
-            return Id == aux.Id;            
+            return ID_Pedido == aux.ID_Pedido;            
         }
         public override string ToString()
         {
             StringBuilder auxString = new StringBuilder();
 
-            auxString.AppendLine("Pedido nº" + Id);
+            auxString.AppendLine("Pedido nº" + ID_Pedido);
             auxString.AppendLine("Quantidade de itens no pedido: " + QuantidadeProdutos);
 
             return auxString.ToString();
