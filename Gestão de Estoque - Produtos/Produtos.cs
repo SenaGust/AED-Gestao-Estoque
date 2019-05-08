@@ -10,7 +10,7 @@ namespace Gestão_de_Estoque___Produtos
     class Produtos : IDado
     {
         #region Atributos
-        public string ID { get; private set; }
+        public int ID_Produto { get; private set; }
         public string NomeProduto { get; private set; }
         public double PrecoCusto { get; set; }
         public double MargemLucro { get; set; }
@@ -21,9 +21,9 @@ namespace Gestão_de_Estoque___Produtos
         #endregion
 
         #region Construtor
-        public Produtos(string ID, string NomeProduto, double Margem_Lucro,double Preco_custo, double Estoque_Inicial, double Estoque_minimo)
+        public Produtos(int ID, string NomeProduto, double Margem_Lucro,double Preco_custo, double Estoque_Inicial, double Estoque_minimo)
         {
-            this.ID = ID;
+            this.ID_Produto = ID;
             this.NomeProduto = NomeProduto;
             this.MargemLucro = Margem_Lucro;
             this.PrecoCusto = Preco_custo;
@@ -33,11 +33,14 @@ namespace Gestão_de_Estoque___Produtos
 
         public Produtos()
         {
-
+            ID_Produto = 0;
+            NomeProduto = null;
+            MargemLucro = 0;
+            PrecoCusto = 0;
+            estoque_inicial = 0;
+            estoque_minimo = 0;
         }
         #endregion
-
-
 
         #region Métodos
         public double CalcImposto()
@@ -52,19 +55,22 @@ namespace Gestão_de_Estoque___Produtos
         #endregion
 
         #region Métodos Interface
-
         public int CompareTo(object obj)
         {
-            Pedido item = (Pedido)(obj);
+            Produtos aux = (Produtos)(obj);
 
-
-            return 0;
+            if (ID_Produto < aux.ID_Produto)
+                return -1;
+            else if (ID_Produto > aux.ID_Produto)
+                return 1;
+            else
+                return 0;
         }
         public override bool Equals(object obj)
         {
-            Pedido item = (Pedido)(obj);
+            Produtos aux = (Produtos)(obj);
 
-            return false;
+            return ID_Produto == aux.ID_Produto;
         }
         #endregion
     }

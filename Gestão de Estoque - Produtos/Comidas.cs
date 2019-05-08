@@ -21,7 +21,7 @@ namespace Gestão_de_Estoque___Produtos
         public override string ToString()
         {
             return String.Format("Id: {0}; Categoria: Comidas; Nome do produto: {1}; Custo: {2}; Margem de lucro: {3}",
-                ID, NomeProduto, PrecoCusto, MargemLucro);
+                ID_Produto, NomeProduto, PrecoCusto, MargemLucro);
         }
         #endregion
     }
