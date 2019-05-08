@@ -73,5 +73,10 @@ namespace Gestão_de_Estoque___Produtos
             return ID_Produto == aux.ID_Produto;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return ("Produto: " +this.NomeProduto + "\tPedidos: " + Vendas.ToString()); //vendas já vai usar o string da fila, portanto não preciso construir o toString dele aqui
+        }
     }
 }
