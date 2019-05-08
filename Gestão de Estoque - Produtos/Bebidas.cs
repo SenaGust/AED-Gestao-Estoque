@@ -8,8 +8,9 @@ namespace Gestão_de_Estoque___Produtos
 {
     class Bebidas : Produtos
     {
+        //cód_produto; nome; categoria; margem de lucro; preço de custo; estoque inicial; minimo estoque
         #region Construtor
-        public Bebidas(string id, string nome, double preco, double mLucroMin, double mLucroMax) : base(id, nome, preco, mLucroMin, mLucroMax)
+        public Bebidas(string id, string nome, double margem_lucro, double preco, double estoque_inicial,double min_estoque) : base(id, nome, preco, mLucroMin, mLucroMax)
         {
             Imposto = 0.45;
         }

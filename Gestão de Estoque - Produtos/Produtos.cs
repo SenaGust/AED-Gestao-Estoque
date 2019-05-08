@@ -6,26 +6,29 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Estoque___Produtos
 {
+    //cód_produto; nome; categoria; margem de lucro; preço de custo; estoque inicial; minimo estoque
     class Produtos : IDado
     {
         #region Atributos
         public string ID { get; private set; }
         public string NomeProduto { get; private set; }
         public double PrecoCusto { get; set; }
-        public double MargemLucroMIN { get; set; }
-        public double MargemLucroMAX { get; set; }
+        public double MargemLucro { get; set; }
+        public double estoque_inicial { get; set; }
+        public double estoque_minimo { get; set; }
         public double Imposto { get; set; }
         public Fila Vendas { get; set; }
         #endregion
 
         #region Construtor
-        public Produtos(string ID, string NomeProduto, double PrecoCusto, double MargemLucroMIN, double MargemLucroMAX)
+        public Produtos(string ID, string NomeProduto, double Margem_Lucro,double Preco_custo, double Estoque_Inicial, double Estoque_minimo)
         {
             this.ID = ID;
             this.NomeProduto = NomeProduto;
-            this.PrecoCusto = PrecoCusto;
-            this.MargemLucroMIN = MargemLucroMIN;
-            this.MargemLucroMAX = MargemLucroMAX;
+            this.MargemLucro = Margem_Lucro;
+            this.PrecoCusto = Preco_custo;
+            this.estoque_inicial = Estoque_Inicial;
+            this.estoque_minimo = Estoque_minimo;
         }
 
         public Produtos()
@@ -39,12 +42,12 @@ namespace Gestão_de_Estoque___Produtos
         #region Métodos
         public double CalcImposto()
         {
-            return (PrecoCusto + (PrecoCusto * MargemLucroMIN)) * Imposto;
+            return (PrecoCusto + (PrecoCusto * MargemLucro)) * Imposto;
         }
 
         public double CalcPrecoVenda()
         {
-            return PrecoCusto + (PrecoCusto * MargemLucroMIN) + CalcImposto();
+            return PrecoCusto + (PrecoCusto * MargemLucro) + CalcImposto();
         }
         #endregion
 
