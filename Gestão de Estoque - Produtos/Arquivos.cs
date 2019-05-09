@@ -10,7 +10,7 @@ namespace Gestão_de_Estoque___Produtos
     class Arquivos
     {
         #region Leitura_arq_produtos
-        public Fila LeituraArquivoProdutos(string arq1)
+        public static Fila LeituraArquivoProdutos(string arq1)
         {
             Fila Produtos = new Fila();
 
@@ -87,7 +87,33 @@ namespace Gestão_de_Estoque___Produtos
 
             //Arquivo
             //Cod_pedido; Cod_Produto; Qtd_Vendida
+        }
 
+        public static void InserirVendasEmProdutos(Fila filaVendas, Fila filaProdutos)
+        {
+            //bool erroNaoEncontrado = false;
+            if (filaProdutos.Vazia()) return;
+
+            while (!filaVendas.Vazia())
+            {
+                Vendas Venda_a_ser_inserida = (Vendas)(filaVendas.Retirar());
+                Produtos produtoEscolhido = new Produtos(Venda_a_ser_inserida.ID_Produto, null, 0, 0, 0, 0);
+                Produtos auxProdutos/*, primeiro = null*/;
+
+                do
+                {
+                    auxProdutos = (Produtos)(filaProdutos.Retirar());
+
+                    //if (primeiro == null)
+                    //    primeiro = auxProdutos;
+
+                    if (auxProdutos.ID_Produto == produtoEscolhido.ID_Produto)
+                        auxProdutos.AdicionarVenda(Venda_a_ser_inserida);
+
+                    filaProdutos.Inserir(auxProdutos);
+                }
+                while (auxProdutos.ID_Produto != produtoEscolhido.ID_Produto);
+            }
         }
     }
 }
