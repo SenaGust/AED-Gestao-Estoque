@@ -38,16 +38,16 @@ namespace Gestão_de_Estoque___Produtos
                     switch (int.Parse(vetor_aux_arq1[2])) //terceira posição da linha do arquivo; referente a categoria do produto
                     {
                         case 1:                      //id              nome                margem de lucro                  preço de custo                 estoque inicial                   estoque minimo     
-                            dado = new Bebidas(vetor_aux_arq1[0], vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
+                            dado = new Bebidas(int.Parse(vetor_aux_arq1[0]), vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
                             break;
                         case 2:
-                            dado = new Comidas(vetor_aux_arq1[0], vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
+                            dado = new Comidas(int.Parse(vetor_aux_arq1[0]), vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
                             break;
                         case 3:
-                            dado = new MaterialEscritorio(vetor_aux_arq1[0], vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
+                            dado = new MaterialEscritorio(int.Parse(vetor_aux_arq1[0]), vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
                             break;
                         case 4:
-                            dado = new UtensiliosDomesticos(vetor_aux_arq1[0], vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
+                            dado = new UtensiliosDomesticos(int.Parse(vetor_aux_arq1[0]), vetor_aux_arq1[1], double.Parse(vetor_aux_arq1[2]), double.Parse(vetor_aux_arq1[3]), double.Parse(vetor_aux_arq1[4]), double.Parse(vetor_aux_arq1[5]));
                             break;
                         default:
                             break;
