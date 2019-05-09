@@ -10,15 +10,15 @@ namespace Gestão_de_Estoque___Produtos
     {
         #region Atributos
         public int ID_Vendas { get; set; }
-        public Produtos Produto { get; set; }
+        public int ID_Produto { get; set; }
         public int Quantidade { get; set; }
         #endregion
 
         #region Construtor
-        public Vendas(int ID_Pedido, Produtos Produto, int Quantidade)
+        public Vendas(int Id_Venda, int Id_Produto, int Quantidade)
         {
-            this.ID_Vendas = ID_Pedido;
-            this.Produto = Produto;
+            this.ID_Vendas = Id_Venda;
+            this.ID_Produto = Id_Produto;
             this.Quantidade = Quantidade;
         }
         #endregion
@@ -43,7 +43,7 @@ namespace Gestão_de_Estoque___Produtos
         }
         public override string ToString()
         {
-            return ("ID Produto: " + Produto.ID_Produto + "; Nome: " + Produto.NomeProduto + "; Quantidade: " + Quantidade +".");
+            return ("ID Produto: " + this.ID_Vendas + "; Nome: " + this.ID_Produto + "; Quantidade: " + Quantidade +".");
         }
         #endregion
     }
