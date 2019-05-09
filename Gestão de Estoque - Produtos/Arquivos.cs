@@ -10,7 +10,7 @@ namespace Gestão_de_Estoque___Produtos
     class Arquivos
     {
         #region Leitura_arq_produtos
-        public Fila LeituraArquivoProdutos(string arq1)
+        public static Fila LeituraArquivoProdutos(string arq1)
         {
             Fila Produtos = new Fila();
 
@@ -68,12 +68,52 @@ namespace Gestão_de_Estoque___Produtos
 
         }
 
-        public void LeituraArquivoVendas()
+        public static Fila LeituraArquivoVendas(string arq3)
         {
+            StreamReader leituraArquivo3 = new StreamReader(arq3);
+            Fila todasVendas = new Fila();
+            string[] auxiliar;
+
+            while(!leituraArquivo3.EndOfStream)
+            {
+                auxiliar = leituraArquivo3.ReadLine().Split(';');
+
+                if (auxiliar.Length == 3)
+                    todasVendas.Inserir(new Vendas(int.Parse(auxiliar[0]), int.Parse(auxiliar[1]), int.Parse(auxiliar[2])));
+            }
+
+            leituraArquivo3.Close();
+            return todasVendas;
 
             //Arquivo
             //Cod_pedido; Cod_Produto; Qtd_Vendida
+        }
 
+        public static void InserirVendasEmProdutos(Fila filaVendas, Fila filaProdutos)
+        {
+            //bool erroNaoEncontrado = false;
+            if (filaProdutos.Vazia()) return;
+
+            while (!filaVendas.Vazia())
+            {
+                Vendas Venda_a_ser_inserida = (Vendas)(filaVendas.Retirar());
+                Produtos produtoEscolhido = new Produtos(Venda_a_ser_inserida.ID_Produto, null, 0, 0, 0, 0);
+                Produtos auxProdutos/*, primeiro = null*/;
+
+                do
+                {
+                    auxProdutos = (Produtos)(filaProdutos.Retirar());
+
+                    //if (primeiro == null)
+                    //    primeiro = auxProdutos;
+
+                    if (auxProdutos.ID_Produto == produtoEscolhido.ID_Produto)
+                        auxProdutos.AdicionarVenda(Venda_a_ser_inserida);
+
+                    filaProdutos.Inserir(auxProdutos);
+                }
+                while (auxProdutos.ID_Produto != produtoEscolhido.ID_Produto);
+            }
         }
     }
 }

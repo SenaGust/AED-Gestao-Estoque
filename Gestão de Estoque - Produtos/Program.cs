@@ -10,7 +10,15 @@ namespace Gestão_de_Estoque___Produtos
     {
         static void Main(string[] args)
         {
+            Fila todasVendas = Arquivos.LeituraArquivoVendas("vendas.txt");
+            Console.WriteLine(todasVendas.ToString());
 
+            Fila todosProdutos = Arquivos.LeituraArquivoProdutos("arquivodeprodutos.txt");
+            Console.WriteLine(todosProdutos.ToString());
+
+            Arquivos.InserirVendasEmProdutos(todasVendas, todosProdutos);
+
+            Console.WriteLine(todosProdutos.ToString());
         }
     }
 }

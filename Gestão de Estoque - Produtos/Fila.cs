@@ -56,12 +56,10 @@ namespace Gestão_de_Estoque___Produtos
         {
             StringBuilder auxImpressao = new StringBuilder();
             Elemento atual = Primeiro;
-            int contador = 0;
 
             while (atual.Prox != null)
             {
-                contador++;
-                auxImpressao.AppendLine("Produto: " + contador + " " + atual.Prox.MeuDado.ToString() + "\n");
+                auxImpressao.AppendLine(atual.Prox.MeuDado.ToString());
                 atual = atual.Prox;
             }
 
