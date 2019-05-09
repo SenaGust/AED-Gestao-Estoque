@@ -68,8 +68,22 @@ namespace Gestão_de_Estoque___Produtos
 
         }
 
-        public void LeituraArquivoVendas()
+        public static Fila LeituraArquivoVendas(string arq3)
         {
+            StreamReader leituraArquivo3 = new StreamReader(arq3);
+            Fila todasVendas = new Fila();
+            string[] auxiliar;
+
+            while(!leituraArquivo3.EndOfStream)
+            {
+                auxiliar = leituraArquivo3.ReadLine().Split(';');
+
+                if (auxiliar.Length == 3)
+                    todasVendas.Inserir(new Vendas(int.Parse(auxiliar[0]), int.Parse(auxiliar[1]), int.Parse(auxiliar[2])));
+            }
+
+            leituraArquivo3.Close();
+            return todasVendas;
 
             //Arquivo
             //Cod_pedido; Cod_Produto; Qtd_Vendida
