@@ -45,7 +45,7 @@ namespace Gestão_de_Estoque___Produtos
         #endregion
 
         #region Métodos
-        public void AdcionarVenda(Vendas venda)
+        public void AdicionarVenda(Vendas venda)
         {
             this.Todas_as_Vendas.Inserir(venda);
         }
