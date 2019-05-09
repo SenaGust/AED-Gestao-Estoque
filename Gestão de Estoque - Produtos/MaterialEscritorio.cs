@@ -9,7 +9,7 @@ namespace Gestão_de_Estoque___Produtos
     class MaterialEscritorio : Produtos
     {
         #region Construtor
-        public MaterialEscritorio(string id, string nome, double margem_lucro, double preco, double estoque_inicial, double min_estoque) : base(id, nome, margem_lucro, preco, estoque_inicial, min_estoque)
+        public MaterialEscritorio(int id, string nome, double margem_lucro, double preco, double estoque_inicial, double min_estoque) : base(id, nome, margem_lucro, preco, estoque_inicial, min_estoque)
         {
             Imposto = 0.4;
         }

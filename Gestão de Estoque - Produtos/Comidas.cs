@@ -9,7 +9,7 @@ namespace Gestão_de_Estoque___Produtos
     class Comidas : Produtos
     {
         #region Construtor
-        public Comidas(string id, string nome, double margem_lucro, double preco, double estoque_inicial, double min_estoque) : base(id, nome, margem_lucro, preco, estoque_inicial, min_estoque)
+        public Comidas(int id, string nome, double margem_lucro, double preco, double estoque_inicial, double min_estoque) : base(id, nome, margem_lucro, preco, estoque_inicial, min_estoque)
         {
             Imposto = 0.1;
         }
