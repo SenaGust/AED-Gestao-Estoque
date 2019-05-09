@@ -19,6 +19,8 @@ namespace Gestão_de_Estoque___Produtos
             Arquivos.InserirVendasEmProdutos(todasVendas, todosProdutos);
 
             Console.WriteLine(todosProdutos.ToString());
+
+            Console.WriteLine();
         }
     }
 }

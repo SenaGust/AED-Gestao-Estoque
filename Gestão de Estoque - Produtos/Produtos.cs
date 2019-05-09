@@ -82,7 +82,12 @@ namespace Gestão_de_Estoque___Produtos
 
         public override string ToString()
         {
-            return ("Produto: " +this.NomeProduto + "\tPedidos: " + Todas_as_Vendas.ToString()); //vendas já vai usar o string da fila, portanto não preciso construir o toString dele aqui
+            return ("Produto: " + this.NomeProduto + "\tPedidos: " + Todas_as_Vendas.ToString()); //vendas já vai usar o string da fila, portanto não preciso construir o toString dele aqui
         }
+
+        //posso pegar tudo que as classes filhas imprimem que é igual e colocar aqui na classe produtos 
+        //Nas classes filhas ficaria algo como "return "Categoria: x + base.tostring()"
+
+
     }
 }
