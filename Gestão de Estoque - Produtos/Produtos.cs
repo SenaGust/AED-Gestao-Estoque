@@ -17,7 +17,7 @@ namespace Gestão_de_Estoque___Produtos
         public double estoque_inicial { get; set; }
         public double estoque_minimo { get; set; }
         public double Imposto { get; set; }
-        public Fila Vendas { get; set; }
+        public Fila Todas_as_Vendas { get; set; }
         #endregion
 
         #region Construtor
@@ -29,6 +29,7 @@ namespace Gestão_de_Estoque___Produtos
             this.PrecoCusto = Preco_custo;
             this.estoque_inicial = Estoque_Inicial;
             this.estoque_minimo = Estoque_minimo;
+            this.Todas_as_Vendas = new Fila();
         }
 
         public Produtos()
@@ -39,10 +40,15 @@ namespace Gestão_de_Estoque___Produtos
             PrecoCusto = 0;
             estoque_inicial = 0;
             estoque_minimo = 0;
+            this.Todas_as_Vendas = null;
         }
         #endregion
 
         #region Métodos
+        public void AdcionarVenda(Vendas venda)
+        {
+            this.Todas_as_Vendas.Inserir(venda);
+        }
         public double CalcImposto()
         {
             return (PrecoCusto + (PrecoCusto * MargemLucro)) * Imposto;
@@ -76,7 +82,7 @@ namespace Gestão_de_Estoque___Produtos
 
         public override string ToString()
         {
-            return ("Produto: " +this.NomeProduto + "\tPedidos: " + Vendas.ToString()); //vendas já vai usar o string da fila, portanto não preciso construir o toString dele aqui
+            return ("Produto: " +this.NomeProduto + "\tPedidos: " + Todas_as_Vendas.ToString()); //vendas já vai usar o string da fila, portanto não preciso construir o toString dele aqui
         }
     }
 }
